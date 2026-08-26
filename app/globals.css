@@ -238,6 +238,107 @@ button:disabled {
   color: #6ee7b7;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  body.digital-cursor-enabled,
+  body.digital-cursor-enabled * {
+    cursor: none !important;
+  }
+
+  .digital-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483647;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 140ms ease;
+    will-change: transform;
+  }
+
+  .digital-cursor.is-visible {
+    opacity: 1;
+  }
+
+  .digital-cursor__aura,
+  .digital-cursor__ring,
+  .digital-cursor__core {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+  }
+
+  .digital-cursor__aura {
+    width: 3.25rem;
+    height: 3.25rem;
+    background: radial-gradient(circle, rgb(103 232 249 / 0.22), rgb(34 211 238 / 0.08) 42%, transparent 72%);
+    filter: blur(2px);
+    transition: width 180ms ease, height 180ms ease, background 180ms ease;
+  }
+
+  .digital-cursor__ring {
+    width: 1.7rem;
+    height: 1.7rem;
+    border: 1px solid rgb(103 232 249 / 0.72);
+    background: rgb(8 19 32 / 0.12);
+    box-shadow:
+      0 0 0 1px rgb(34 211 238 / 0.12),
+      0 0 14px rgb(34 211 238 / 0.42),
+      inset 0 0 9px rgb(34 211 238 / 0.18);
+    transition: width 160ms ease, height 160ms ease, border-color 160ms ease, transform 120ms ease;
+  }
+
+  .digital-cursor__core {
+    width: 0.42rem;
+    height: 0.42rem;
+    background: #ecfeff;
+    box-shadow:
+      0 0 5px #ffffff,
+      0 0 12px #22d3ee,
+      0 0 22px rgb(34 211 238 / 0.86);
+    transition: width 140ms ease, height 140ms ease, background 140ms ease;
+  }
+
+  .digital-cursor.is-interactive .digital-cursor__aura {
+    width: 4.5rem;
+    height: 4.5rem;
+    background: radial-gradient(circle, rgb(248 113 113 / 0.22), rgb(34 211 238 / 0.1) 44%, transparent 72%);
+  }
+
+  .digital-cursor.is-interactive .digital-cursor__ring {
+    width: 2.35rem;
+    height: 2.35rem;
+    border-color: rgb(248 113 113 / 0.82);
+    box-shadow:
+      0 0 0 1px rgb(239 68 68 / 0.14),
+      0 0 18px rgb(239 68 68 / 0.38),
+      inset 0 0 10px rgb(34 211 238 / 0.18);
+  }
+
+  .digital-cursor.is-interactive .digital-cursor__core {
+    width: 0.55rem;
+    height: 0.55rem;
+    background: #fee2e2;
+    box-shadow:
+      0 0 5px #ffffff,
+      0 0 12px #f87171,
+      0 0 24px rgb(239 68 68 / 0.82);
+  }
+
+  .digital-cursor.is-pressed .digital-cursor__ring {
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+
+  .digital-cursor.is-pressed .digital-cursor__core {
+    width: 0.72rem;
+    height: 0.72rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

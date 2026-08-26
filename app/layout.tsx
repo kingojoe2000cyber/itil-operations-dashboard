@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DigitalLightCursor } from "@/components/digital-light-cursor";
 import "./globals.css";
 
 const repositoryName = (process.env.GITHUB_REPOSITORY ?? "").split("/")[1] ?? "";
@@ -29,7 +30,10 @@ export default function RootLayout({
       <head>
         <meta name="codex-preview" content="development" />
       </head>
-      <body className="min-h-screen bg-[#081320] antialiased">{children}</body>
+      <body className="min-h-screen bg-[#081320] antialiased">
+        <DigitalLightCursor />
+        {children}
+      </body>
     </html>
   );
 }
