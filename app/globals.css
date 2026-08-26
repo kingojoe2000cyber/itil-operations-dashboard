@@ -238,13 +238,12 @@ button:disabled {
   color: #6ee7b7;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  body.digital-cursor-enabled,
-  body.digital-cursor-enabled * {
-    cursor: none !important;
-  }
+body.digital-cursor-enabled,
+body.digital-cursor-enabled * {
+  cursor: none !important;
+}
 
-  .digital-cursor {
+.digital-cursor {
     position: fixed;
     top: 0;
     left: 0;
@@ -255,61 +254,62 @@ button:disabled {
     opacity: 0;
     transition: opacity 140ms ease;
     will-change: transform;
-  }
+}
 
-  .digital-cursor.is-visible {
+.digital-cursor.is-visible {
     opacity: 1;
-  }
+}
 
-  .digital-cursor__aura,
-  .digital-cursor__ring,
-  .digital-cursor__core {
+.digital-cursor__aura,
+.digital-cursor__ring,
+.digital-cursor__core {
     position: absolute;
     top: 0;
     left: 0;
     display: block;
     border-radius: 999px;
     transform: translate(-50%, -50%);
-  }
+}
 
-  .digital-cursor__aura {
-    width: 3.25rem;
-    height: 3.25rem;
-    background: radial-gradient(circle, rgb(103 232 249 / 0.22), rgb(34 211 238 / 0.08) 42%, transparent 72%);
-    filter: blur(2px);
+.digital-cursor__aura {
+    width: 4rem;
+    height: 4rem;
+    background: radial-gradient(circle, rgb(236 254 255 / 0.5), rgb(34 211 238 / 0.24) 35%, rgb(6 182 212 / 0.1) 55%, transparent 74%);
+    filter: blur(2.5px);
     transition: width 180ms ease, height 180ms ease, background 180ms ease;
-  }
+}
 
-  .digital-cursor__ring {
-    width: 1.7rem;
-    height: 1.7rem;
-    border: 1px solid rgb(103 232 249 / 0.72);
-    background: rgb(8 19 32 / 0.12);
+.digital-cursor__ring {
+    width: 1.85rem;
+    height: 1.85rem;
+    border: 2px solid rgb(165 243 252 / 0.94);
+    background: rgb(8 19 32 / 0.18);
     box-shadow:
-      0 0 0 1px rgb(34 211 238 / 0.12),
-      0 0 14px rgb(34 211 238 / 0.42),
-      inset 0 0 9px rgb(34 211 238 / 0.18);
+      0 0 0 1px rgb(34 211 238 / 0.26),
+      0 0 18px rgb(34 211 238 / 0.74),
+      0 0 34px rgb(6 182 212 / 0.4),
+      inset 0 0 10px rgb(34 211 238 / 0.3);
     transition: width 160ms ease, height 160ms ease, border-color 160ms ease, transform 120ms ease;
-  }
+}
 
-  .digital-cursor__core {
-    width: 0.42rem;
-    height: 0.42rem;
-    background: #ecfeff;
+.digital-cursor__core {
+    width: 0.55rem;
+    height: 0.55rem;
+    background: #ffffff;
     box-shadow:
-      0 0 5px #ffffff,
-      0 0 12px #22d3ee,
-      0 0 22px rgb(34 211 238 / 0.86);
+      0 0 7px #ffffff,
+      0 0 15px #67e8f9,
+      0 0 28px rgb(34 211 238 / 0.98);
     transition: width 140ms ease, height 140ms ease, background 140ms ease;
-  }
+}
 
-  .digital-cursor.is-interactive .digital-cursor__aura {
-    width: 4.5rem;
-    height: 4.5rem;
-    background: radial-gradient(circle, rgb(248 113 113 / 0.22), rgb(34 211 238 / 0.1) 44%, transparent 72%);
-  }
+.digital-cursor.is-interactive .digital-cursor__aura {
+    width: 5rem;
+    height: 5rem;
+    background: radial-gradient(circle, rgb(254 226 226 / 0.5), rgb(248 113 113 / 0.26) 38%, rgb(34 211 238 / 0.1) 58%, transparent 74%);
+}
 
-  .digital-cursor.is-interactive .digital-cursor__ring {
+.digital-cursor.is-interactive .digital-cursor__ring {
     width: 2.35rem;
     height: 2.35rem;
     border-color: rgb(248 113 113 / 0.82);
@@ -317,9 +317,9 @@ button:disabled {
       0 0 0 1px rgb(239 68 68 / 0.14),
       0 0 18px rgb(239 68 68 / 0.38),
       inset 0 0 10px rgb(34 211 238 / 0.18);
-  }
+}
 
-  .digital-cursor.is-interactive .digital-cursor__core {
+.digital-cursor.is-interactive .digital-cursor__core {
     width: 0.55rem;
     height: 0.55rem;
     background: #fee2e2;
@@ -327,16 +327,15 @@ button:disabled {
       0 0 5px #ffffff,
       0 0 12px #f87171,
       0 0 24px rgb(239 68 68 / 0.82);
-  }
+}
 
-  .digital-cursor.is-pressed .digital-cursor__ring {
+.digital-cursor.is-pressed .digital-cursor__ring {
     transform: translate(-50%, -50%) scale(0.72);
-  }
+}
 
-  .digital-cursor.is-pressed .digital-cursor__core {
+.digital-cursor.is-pressed .digital-cursor__core {
     width: 0.72rem;
     height: 0.72rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
