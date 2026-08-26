@@ -20,6 +20,7 @@ jobs:
         run: |
           unzip -o Richmond_Kwadwo_Sarpong_ITIL_Dashboard_Updated.zip
           rm Richmond_Kwadwo_Sarpong_ITIL_Dashboard_Updated.zip
+          rm .github/workflows/deploy-pages.yml
 
       - name: Commit the complete project source
         run: |
